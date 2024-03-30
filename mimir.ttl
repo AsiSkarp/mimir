@@ -15,7 +15,8 @@
 #################################################################
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#id
-mimir:id rdf:type owl:AnnotationProperty .
+mimir:id rdf:type owl:AnnotationProperty ;
+         rdfs:range xsd:string .
 
 
 ###  http://www.w3.org/2004/02/skos/core#definition
@@ -34,84 +35,410 @@ mimir:belongs_to rdf:type owl:ObjectProperty .
 #    Data properties
 #################################################################
 
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#apName
+mimir:apName rdf:type owl:DatatypeProperty ;
+             rdfs:domain mimir:ConnectedAP ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Name of the Access Point."@en ;
+             rdfs:label "apName"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Name of the Access Point."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#bType
+mimir:bType rdf:type owl:DatatypeProperty ;
+            rdfs:domain mimir:DataTypeTemplates ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Type of the bay."@en ;
+            rdfs:label "bType"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Type of the bay."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#bayName
+mimir:bayName rdf:type owl:DatatypeProperty ;
+              rdfs:domain mimir:Terminal ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Name of the bay."@en ;
+              rdfs:label "bayName"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Name of the bay."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#buffered
+mimir:buffered rdf:type owl:DatatypeProperty ;
+               rdfs:domain mimir:ReportControl ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Buffered report."@en ;
+               rdfs:label "buffered"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Buffered report."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#cNodeName
+mimir:cNodeName rdf:type owl:DatatypeProperty ;
+                rdfs:domain mimir:Terminal ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Name of the connectivity node."@en ;
+                rdfs:label "cNodeName"@en ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Name of the connectivity node."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#cdc
+mimir:cdc rdf:type owl:DatatypeProperty ;
+          rdfs:domain mimir:DOType ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Data change."@en ;
+          rdfs:label "cdc"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Data change."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#confRev
+mimir:confRev rdf:type owl:DatatypeProperty ;
+              rdfs:domain mimir:ReportControl ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Configuration revision."@en ;
+              rdfs:label "confRev"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Configuration revision."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#configVersion
+mimir:configVersion rdf:type owl:DatatypeProperty ;
+                    rdfs:domain mimir:IED ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Configuration version."@en ;
+                    rdfs:label "configVersion"@en ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "Configuration version."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#connectivityNode
+mimir:connectivityNode rdf:type owl:DatatypeProperty ;
+                       rdfs:domain mimir:Terminal ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "Connectivity node of the conducting equipment terminal."@en ;
+                       rdfs:label "connectivityNode"@en ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "Connectivity node of the conducting equipment terminal."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#count
+mimir:count rdf:type owl:DatatypeProperty ;
+            rdfs:domain mimir:DataTypeTemplates ;
+            rdfs:range xsd:string ;
+            rdfs:comment "DA count"@en ;
+            rdfs:label "count"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "DA count."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#datSet
+mimir:datSet rdf:type owl:DatatypeProperty ;
+             rdfs:domain mimir:ReportControl ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Data Set of the FCDA."@en ;
+             rdfs:label "datSet"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Data Set of the FCDA."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#dchg
+mimir:dchg rdf:type owl:DatatypeProperty ;
+           rdfs:domain mimir:DataTypeTemplates ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Data change."@en ;
+           rdfs:label "dchg"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Data change."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#desc
+mimir:desc rdf:type owl:DatatypeProperty ;
+           rdfs:domain mimir:SCL ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Description of the element."@en ;
+           rdfs:label "desc"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Description of the element."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#doName
+mimir:doName rdf:type owl:DatatypeProperty ;
+             rdfs:domain mimir:FCDA ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Name of the Data Object."@en ;
+             rdfs:label "doName"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Name of the Data Object."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#fc
+mimir:fc rdf:type owl:DatatypeProperty ;
+         rdfs:domain mimir:DataTypeTemplates ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Functional constraint."@en ;
+         rdfs:label "fc"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Functional constraint."@en .
+
+
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#id
 mimir:id rdf:type owl:DatatypeProperty ;
-                  rdfs:domain mimir:SCL ;
-                  rdfs:range xsd:string .
+         rdfs:domain mimir:SCL .
 
 
-### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#iedName
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#iedName
 mimir:iedName rdf:type owl:DatatypeProperty ;
-                  rdfs:domain mimir:SCL ;
-                  rdfs:range xsd:string .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#revision
-mimir:revision rdf:type owl:DatatypeProperty ;
-                  rdfs:domain mimir:SCL ;
-                  rdfs:range xsd:string .
-
-mimir:release rdf:type owl:DatatypeProperty ;
-                  rdfs:domain mimir:SCL ;
-                  rdfs:range xsd:string .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#type
-mimir:type rdf:type owl:DatatypeProperty ;
-                  rdfs:domain mimir:SCL ;
-                  rdfs:range xsd:string .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#version
-mimir:version rdf:type owl:DatatypeProperty ;
-                  rdfs:domain mimir:SCL ;
-                  rdfs:range xsd:string .
+              rdfs:domain mimir:SCL ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Name of the IED."@en ;
+              rdfs:label "iedName"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Name of the IED."@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#inst
 mimir:inst rdf:type owl:DatatypeProperty ;
-                  rdfs:domain mimir:IED ;
-                  rdfs:range xsd:string .
+           rdfs:domain mimir:IED ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Instance name."@en ;
+           rdfs:label "inst"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Instance name."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#intgPd
+mimir:intgPd rdf:type owl:DatatypeProperty ;
+             rdfs:domain mimir:ReportControl ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Integrity period."@en ;
+             rdfs:label "intgPd"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Integrity period."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ldInst
+mimir:ldInst rdf:type owl:DatatypeProperty ;
+             rdfs:domain mimir:SCL ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Logical Device Instance."@en ;
+             rdfs:label "ldInst"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Logical Device Instance."@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#lnClass
 mimir:lnClass rdf:type owl:DatatypeProperty ;
-                  rdfs:domain mimir:LDevice ;
-                  rdfs:range xsd:string .
+              rdfs:domain mimir:LDevice ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Logical Node Class."@en ;
+              rdfs:label "lnClass"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Logical Node Class."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#lnInst
+mimir:lnInst rdf:type owl:DatatypeProperty ;
+             rdfs:domain mimir:LDevice ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Logical Node Instance."@en ;
+             rdfs:label "lnInst"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Logical Node Instance."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#manufacturer
+mimir:manufacturer rdf:type owl:DatatypeProperty ;
+                   rdfs:domain mimir:IED ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Manufacturer of the IED."@en ;
+                   rdfs:label "manufacturer"@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "Manufacturer of the IED."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#multiplier
+mimir:multiplier rdf:type owl:DatatypeProperty ;
+                 rdfs:domain mimir:SCL ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Multiplication factor"@en ;
+                 rdfs:label "multiplier"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Multiplication factor"@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#nameStructure
+mimir:nameStructure rdf:type owl:DatatypeProperty ;
+                    rdfs:domain mimir:Header ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Name structure of the SCD file."@en ;
+                    rdfs:label "nameStructure"@en ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "Name structure of the SCD file."@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#nominalVoltage
 mimir:nominalVoltage rdf:type owl:DatatypeProperty ;
-                  rdfs:domain mimir:VoltageLevel ;
-                  rdfs:range xsd:string .
+                     rdfs:domain mimir:VoltageLevel ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Nominal Voltage of the Voltage Level."@en ;
+                     rdfs:label "nominalVoltage"@en ;
+                     <http://www.w3.org/2004/02/skos/core#definition> "Nominal Voltage of the Voltage Level."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ord
+mimir:ord rdf:type owl:DatatypeProperty ;
+          rdfs:domain mimir:EnumVal ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Order."@en ;
+          rdfs:label "ord"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Order."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#pathName
+mimir:pathName rdf:type owl:DatatypeProperty ;
+               rdfs:domain mimir:ConnectivityNode ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Path name of the connectivity node."@en ;
+               rdfs:label "pathName"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Path name of the connectivity node."@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#prefix
 mimir:prefix rdf:type owl:DatatypeProperty ;
-                  rdfs:domain mimir:IED ;
-                  rdfs:range xsd:string .
+             rdfs:domain mimir:IED ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Prefix of the IED."@en ;
+             rdfs:label "prefix"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Prefix of the IED."@en .
 
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#qchg
+mimir:qchg rdf:type owl:DatatypeProperty ;
+           rdfs:domain mimir:DataTypeTemplates ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Quality change."@en ;
+           rdfs:label "qchg"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Quality change."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#release
+mimir:release rdf:type owl:DatatypeProperty ;
+              rdfs:domain mimir:SCL ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Release number."@en ;
+              rdfs:label "release"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Release number."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#revision
+mimir:revision rdf:type owl:DatatypeProperty ;
+               rdfs:domain mimir:SCL ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Revision number."@en ;
+               rdfs:label "revision"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Revision number."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#subStationName
+mimir:subStationName rdf:type owl:DatatypeProperty ;
+                     rdfs:domain mimir:Terminal ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Name of the substation."@en ;
+                     rdfs:label "subStationName"@en ;
+                     <http://www.w3.org/2004/02/skos/core#definition> "Name of the substation."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#sxyx
+mimir:sxyx rdf:type owl:DatatypeProperty ;
+           rdfs:domain mimir:Bay ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Conducting equipment x-coordinate."@en ;
+           rdfs:label "sxyx"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Conducting equipment x-coordinate."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#sxyy
+mimir:sxyy rdf:type owl:DatatypeProperty ;
+           rdfs:domain mimir:Bay ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Conducting equipment y-coordinate."@en ;
+           rdfs:label "sxyy"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Conducting equipment y-coordinate."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#toolID
 mimir:toolID rdf:type owl:DatatypeProperty ;
-                  rdfs:domain mimir:Header ;
-                  rdfs:range xsd:string .
+             rdfs:domain mimir:Header ;
+             rdfs:range xsd:string ;
+             rdfs:comment "ID of the SCD file editor."@en ;
+             rdfs:label "toolID"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "ID of the SCD file editor."@en .
 
-### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#nameStructure
-mimir:nameStructure rdf:type owl:DatatypeProperty ;
-                    rdfs:domain mimir:Header ;
-                    rdfs:range xsd:string .
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#transient
+mimir:transient rdf:type owl:DatatypeProperty ;
+                rdfs:domain mimir:DO ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Transient report."@en ;
+                rdfs:label "transient"@en ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Transient report."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#type
+mimir:type rdf:type owl:DatatypeProperty ;
+           rdfs:domain mimir:SCL ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Type of the element."@en ;
+           rdfs:label "type"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Type of the element."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#unit
+mimir:unit rdf:type owl:DatatypeProperty ;
+           rdfs:domain mimir:SCL ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Unit."@en ;
+           rdfs:label "unit"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Unit."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#valKind
+mimir:valKind rdf:type owl:DatatypeProperty ;
+              rdfs:domain mimir:DataTypeTemplates ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Value kind."@en ;
+              rdfs:label "valKind"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Value kind."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#version
+mimir:version rdf:type owl:DatatypeProperty ;
+              rdfs:domain mimir:SCL ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Version number."@en ;
+              rdfs:label "version"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Version number."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#voltageLevelName
+mimir:voltageLevelName rdf:type owl:DatatypeProperty ;
+                       rdfs:domain mimir:Terminal ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "Name of the voltage level."@en ;
+                       rdfs:label "voltageLevelName"@en ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "Name of the voltage level."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#what
+mimir:what rdf:type owl:DatatypeProperty ;
+           rdfs:domain mimir:Header ;
+           rdfs:range xsd:string ;
+           rdfs:comment "What is the SCD file about."@en ;
+           rdfs:label "what"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "What is the SCD file about."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#when
+mimir:when rdf:type owl:DatatypeProperty ;
+           rdfs:domain mimir:Header ;
+           rdfs:range xsd:string ;
+           rdfs:comment "When was the SCD file created."@en ;
+           rdfs:label "when"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "When was the SCD file created."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#who
+mimir:who rdf:type owl:DatatypeProperty ;
+          rdfs:domain mimir:Header ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Who created the SCD file."@en ;
+          rdfs:label "who"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Who created the SCD file."@en .
 
 
 #################################################################
 #    Classes
 #################################################################
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Address
-mimir:Address rdf:type owl:Class ;
-                  rdfs:subClassOf mimir:ConnectedAP ;
-                  rdfs:comment "Address of the IED."@en ;
-                  rdfs:label "Address"@en ;
-                  <http://www.w3.org/2004/02/skos/core#definition> "Address of the IED."@en .
-
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#AccessPoint
 mimir:AccessPoint rdf:type owl:Class ;
@@ -125,16 +452,36 @@ mimir:AccessPoint rdf:type owl:Class ;
                   <http://www.w3.org/2004/02/skos/core#definition> "Access point of the IED."@en .
 
 
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Address
+mimir:Address rdf:type owl:Class ;
+              rdfs:subClassOf mimir:ConnectedAP ;
+              rdfs:comment "Address of the IED."@en ;
+              rdfs:label "Address"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Address of the IED."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#BDA
+mimir:BDA rdf:type owl:Class ;
+          rdfs:subClassOf mimir:DAType ;
+          rdfs:comment "Basic Data Attribute."@en ;
+          rdfs:label "BDA"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Basic Data Attribute."@en .
+
+
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Bay
 mimir:Bay rdf:type owl:Class ;
           rdfs:subClassOf mimir:VoltageLevel ;
-                          #[ rdf:type owl:Restriction ;
-                          #  owl:onProperty mimir:belongs_to ;
-                          #  owl:allValuesFrom sgam:ProcessZone
-                          #] ;
           rdfs:comment "Bay of the substation."@en ;
           rdfs:label "Bay"@en ;
           <http://www.w3.org/2004/02/skos/core#definition> "Bay of the substation."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#BitRate
+mimir:BitRate rdf:type owl:Class ;
+              rdfs:subClassOf mimir:Communication ;
+              rdfs:comment "Bit Rate of the IED."@en ;
+              rdfs:label "BitRate"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Bit Rate of the IED."@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Communication
@@ -148,20 +495,81 @@ mimir:Communication rdf:type owl:Class ;
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ConductingEquipment
 mimir:ConductingEquipment rdf:type owl:Class ;
                           rdfs:subClassOf mimir:Bay ;
-                                          #[ rdf:type owl:Restriction ;
-                                          #  owl:onProperty mimir:belongs_to ;
-                                          #  owl:allValuesFrom sgam:ProcessZone
-                                          #] ;
                           rdfs:comment "Conducting Equipment of the substation Bay."@en ;
                           rdfs:label "ConductingEquipment"@en ;
                           <http://www.w3.org/2004/02/skos/core#definition> "Conducting Equipment of the substation Bay."@en .
 
-  
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ConnectedAP
 mimir:ConnectedAP rdf:type owl:Class ;
                   rdfs:subClassOf mimir:SubNetwork ;
                   rdfs:comment "Connected Access Point."@en ;
                   rdfs:label "ConnectedAP"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "Connected Access Point."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ConnectivityNode
+mimir:ConnectivityNode rdf:type owl:Class ;
+                       rdfs:subClassOf mimir:Bay ;
+                       rdfs:comment "Connectivity Node of the substation Bay."@en ;
+                       rdfs:label "ConnectivityNode"@en ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "Connectivity Node of the substation Bay."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#DA
+mimir:DA rdf:type owl:Class ;
+         rdfs:subClassOf mimir:DOType ;
+         rdfs:comment "Data Attribute."@en ;
+         rdfs:label "DA"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Data Attribute."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#DAI
+mimir:DAI rdf:type owl:Class ;
+          rdfs:subClassOf mimir:DOI ;
+          rdfs:comment "Data Attribute Instance."@en ;
+          rdfs:label "DAI"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Data Attribute Instance."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#DAType
+mimir:DAType rdf:type owl:Class ;
+             rdfs:subClassOf mimir:DataTypeTemplates ;
+             rdfs:comment "Data Attribute Type."@en ;
+             rdfs:label "DAType"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Data Attribute Type."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#DO
+mimir:DO rdf:type owl:Class ;
+         rdfs:subClassOf mimir:LNodeType ;
+         rdfs:comment "Data Object."@en ;
+         rdfs:label "DO"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Data Object."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#DOI
+mimir:DOI rdf:type owl:Class ;
+          rdfs:subClassOf mimir:LDevice ;
+          rdfs:comment "Data Object Instance."@en ;
+          rdfs:label "DOI"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Data Object Instance."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#DOType
+mimir:DOType rdf:type owl:Class ;
+             rdfs:subClassOf mimir:DataTypeTemplates ;
+             rdfs:comment "Data Object Type."@en ;
+             rdfs:label "DOType"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Data Object Type."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#DataSet
+mimir:DataSet rdf:type owl:Class ;
+              rdfs:subClassOf mimir:LDevice ;
+              rdfs:comment "LDevice Data Set."@en ;
+              rdfs:label "DataSet"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "LDevice Data Set."@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#DataTypeTemplates
@@ -172,19 +580,28 @@ mimir:DataTypeTemplates rdf:type owl:Class ;
                         <http://www.w3.org/2004/02/skos/core#definition> "Substation Data Type Templates."@en .
 
 
-mimir:P rdf:type owl:Class ;
-                rdfs:subClassOf mimir:Address ;
-                rdfs:comment "IED Network Physical Layer."@en ;
-                rdfs:label "P"@en ;
-                <http://www.w3.org/2004/02/skos/core#definition> "IED Network Physical Layer."@en .
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#EnumType
+mimir:EnumType rdf:type owl:Class ;
+               rdfs:subClassOf mimir:DataTypeTemplates ;
+               rdfs:comment "Enumeration Type."@en ;
+               rdfs:label "EnumType"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Enumeration Type."@en .
 
 
-### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Private
-mimir:Private rdf:type owl:Class ;
-              rdfs:subClassOf mimir:SCL ;
-              rdfs:comment "Element for customization or vendor specific extensions."@en ;
-              rdfs:label "Private"@en ;
-              <http://www.w3.org/2004/02/skos/core#definition> "Element for vendor customization or specific extensions."@en .
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#EnumVal
+mimir:EnumVal rdf:type owl:Class ;
+              rdfs:subClassOf mimir:DataTypeTemplates ;
+              rdfs:comment "Enumeration Value."@en ;
+              rdfs:label "EnumVal"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Enumeration Value."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#FCDA
+mimir:FCDA rdf:type owl:Class ;
+           rdfs:subClassOf mimir:DataSet ;
+           rdfs:comment "Functional Constraint Data Attribute."@en ;
+           rdfs:label "FCDA"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Functional Constraint Data Attribute."@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Header
@@ -193,7 +610,23 @@ mimir:Header rdf:type owl:Class ;
              mimir:id "" ;
              rdfs:comment "Substation information header"@en ;
              rdfs:label "Header"@en ;
-              <http://www.w3.org/2004/02/skos/core#definition> "Substation information header"@en .
+             <http://www.w3.org/2004/02/skos/core#definition> "Substation information header"@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#History
+mimir:History rdf:type owl:Class ;
+              rdfs:subClassOf mimir:Header ;
+              rdfs:comment "Header history."@en ;
+              rdfs:label "History"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Header history."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Hitem
+mimir:Hitem rdf:type owl:Class ;
+            rdfs:subClassOf mimir:Header ;
+            rdfs:comment "Header item."@en ;
+            rdfs:label "Hitem"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Header item."@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#IED
@@ -204,42 +637,68 @@ mimir:IED rdf:type owl:Class ;
           <http://www.w3.org/2004/02/skos/core#definition> "IED of the Substation."@en .
 
 
-
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#LDevice
 mimir:LDevice rdf:type owl:Class ;
               rdfs:subClassOf mimir:Server ;
               rdfs:comment "IED Logical Device Layer."@en ;
               rdfs:label "LDevice"@en ;
               <http://www.w3.org/2004/02/skos/core#definition> "IED Logical Device Layer."@en .
-                              #[ rdf:type owl:Restriction ;
-                              #  owl:onProperty mimir:belongs_to ;
-                              #  owl:allValuesFrom sgam:FieldZone
-                              #] .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#LN
 mimir:LN rdf:type owl:Class ;
-          rdfs:subClassOf mimir:LDevice ;
-          rdfs:comment "IED Logical Node Layer."@en ;
-          rdfs:label "LN"@en ;
-          <http://www.w3.org/2004/02/skos/core#definition> "IED Logical Node Layer."@en .
-                         #[ rdf:type owl:Restriction ;
-                         #  owl:onProperty mimir:belongs_to ;
-                         #  owl:allValuesFrom sgam:FieldZone
-                         #] .
+         rdfs:subClassOf mimir:LDevice ;
+         rdfs:comment "IED Logical Node Layer."@en ;
+         rdfs:label "LN"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "IED Logical Node Layer."@en .
 
 
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#LNO
-mimir:LNO rdf:type owl:Class ;
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#LN0
+mimir:LN0 rdf:type owl:Class ;
           rdfs:subClassOf mimir:LDevice ;
           rdfs:comment "IED Logical Node Object Layer."@en ;
-          rdfs:label "LNO"@en ;
+          rdfs:label "LN0"@en ;
           <http://www.w3.org/2004/02/skos/core#definition> "IED Logical Node Object Layer."@en .
 
-                          #[ rdf:type owl:Restriction ;
-                          #  owl:onProperty mimir:belongs_to ;
-                          #  owl:allValuesFrom sgam:FieldZone
-                          #] .
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#LNode
+mimir:LNode rdf:type owl:Class ;
+            rdfs:subClassOf mimir:Substation ;
+            rdfs:comment "IED Logical Node Header."@en ;
+            rdfs:label "LNode"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "IED Logical Node Header."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#LNodeType
+mimir:LNodeType rdf:type owl:Class ;
+                rdfs:subClassOf mimir:DataTypeTemplates ;
+                rdfs:comment "IED Logical Node Type."@en ;
+                rdfs:label "LNodeType"@en ;
+                <http://www.w3.org/2004/02/skos/core#definition> "IED Logical Node Type."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#P
+mimir:P rdf:type owl:Class ;
+        rdfs:subClassOf mimir:Address ;
+        rdfs:comment "IED Network Physical Layer."@en ;
+        rdfs:label "P"@en ;
+        <http://www.w3.org/2004/02/skos/core#definition> "IED Network Physical Layer."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Private
+mimir:Private rdf:type owl:Class ;
+              rdfs:subClassOf mimir:SCL ;
+              rdfs:comment "Element for customization or vendor specific extensions."@en ;
+              rdfs:label "Private"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Element for vendor customization or specific extensions."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ReportControl
+mimir:ReportControl rdf:type owl:Class ;
+                    rdfs:subClassOf mimir:LDevice ;
+                    rdfs:comment "Report Control Block."@en ;
+                    rdfs:label "ReportControl"@en ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "Report Control Block."@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#SCL
@@ -250,46 +709,88 @@ mimir:SCL rdf:type owl:Class ;
           <http://www.w3.org/2004/02/skos/core#definition> "Substation Configuration Language Superclass."@en .
 
 
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#SDI
+mimir:SDI rdf:type owl:Class ;
+          rdfs:subClassOf mimir:DOI ;
+          rdfs:comment "Substation Data Instance."@en ;
+          rdfs:label "SDI"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Substation Data Instance."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#SDO
+mimir:SDO rdf:type owl:Class ;
+          rdfs:subClassOf mimir:DataTypeTemplates ;
+          rdfs:comment "Sub Data Object."@en ;
+          rdfs:label "SDO"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Sub Data Object."@en .
+
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Server
 mimir:Server rdf:type owl:Class ;
-              rdfs:subClassOf mimir:AccessPoint ;
-              rdfs:comment "IED Server Layer."@en ;
-              rdfs:label "Server"@en ;
-              <http://www.w3.org/2004/02/skos/core#definition> "IED Server Layer."@en .
-                             #[ rdf:type owl:Restriction ;
-                             #  owl:onProperty mimir:belongs_to ;
-                             #  owl:allValuesFrom sgam:FieldZone
-                             #] .
+             rdfs:subClassOf mimir:AccessPoint ;
+             rdfs:comment "IED Server Layer."@en ;
+             rdfs:label "Server"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "IED Server Layer."@en .
 
 
-### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#SubNetwork
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#SubNetwork
 mimir:SubNetwork rdf:type owl:Class ;
-                  rdfs:subClassOf mimir:Communication ;
-                  rdfs:comment "Communication Subnetwork."@en ;
-                  rdfs:label "SubNetwork"@en ;
-                  <http://www.w3.org/2004/02/skos/core#definition> "Communication Subnetwork."@en .
+                 rdfs:subClassOf mimir:Communication ;
+                 rdfs:comment "Communication Subnetwork."@en ;
+                 rdfs:label "SubNetwork"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Communication Subnetwork."@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Substation
 mimir:Substation rdf:type owl:Class ;
-                  rdfs:subClassOf mimir:SCL ;
-                  rdfs:comment "Substation."@en ;
-                  rdfs:label "Substation"@en ;
-                  <http://www.w3.org/2004/02/skos/core#definition> "Substation."@en .
+                 rdfs:subClassOf mimir:SCL ;
+                 rdfs:comment "Substation."@en ;
+                 rdfs:label "Substation"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Substation."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Terminal
+mimir:Terminal rdf:type owl:Class ;
+               rdfs:subClassOf mimir:ConductingEquipment ;
+               rdfs:comment "Conducting equipment terminal."@en ;
+               rdfs:label "Terminal"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Conducting equipment terminal."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Val
+mimir:Val rdf:type owl:Class ;
+          rdfs:subClassOf mimir:DataTypeTemplates ;
+          rdfs:comment "Data Attribute Value."@en ;
+          rdfs:label "Val"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Data Attribute Value."@en .
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Voltage
+mimir:Voltage rdf:type owl:Class ;
+              rdfs:subClassOf mimir:VoltageLevel ;
+              rdfs:comment "Voltage level of the substation."@en ;
+              rdfs:label "Voltage"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Voltage level of the substation."@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#VoltageLevel
 mimir:VoltageLevel rdf:type owl:Class ;
-                    rdfs:subClassOf mimir:Substation ,
+                   rdfs:subClassOf mimir:Substation ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty mimir:belongs_to ;
                                      owl:allValuesFrom sgam:ProcessZone
                                    ] ;
-                    rdfs:comment "Voltage Level of the Substation."@en ;
-                    rdfs:label "VoltageLevel"@en ;
-                    <http://www.w3.org/2004/02/skos/core#definition> "Voltage Level of the Substation."@en .
+                   rdfs:comment "Voltage Level of the Substation."@en ;
+                   rdfs:label "VoltageLevel"@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "Voltage Level of the Substation."@en .
 
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#bufTime
+mimir:bufTime rdf:type owl:Class ;
+              rdfs:subClassOf mimir:ReportControl ;
+              rdfs:comment "Buffer time."@en ;
+              rdfs:label "bufTime"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Buffer time."@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/sgam#EnterpriseZone
@@ -310,26 +811,26 @@ sgam:FieldZone rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/sgam#OperationZone
 sgam:OperationZone rdf:type owl:Class ;
-                    rdfs:subClassOf sgam:Zone ;
-                    rdfs:comment "SGAM Operation Zone."@en ;
-                    rdfs:label "OperationZone"@en ;
-                    <http://www.w3.org/2004/02/skos/core#definition> "SGAM Operation Zone."@en .
+                   rdfs:subClassOf sgam:Zone ;
+                   rdfs:comment "SGAM Operation Zone."@en ;
+                   rdfs:label "OperationZone"@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "SGAM Operation Zone."@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/sgam#ProcessZone
 sgam:ProcessZone rdf:type owl:Class ;
-                  rdfs:subClassOf sgam:Zone ;
-                  rdfs:comment "SGAM Process Zone."@en ;
-                  rdfs:label "ProcessZone"@en ;
-                  <http://www.w3.org/2004/02/skos/core#definition> "SGAM Process Zone."@en .
+                 rdfs:subClassOf sgam:Zone ;
+                 rdfs:comment "SGAM Process Zone."@en ;
+                 rdfs:label "ProcessZone"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "SGAM Process Zone."@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/sgam#StationZone
 sgam:StationZone rdf:type owl:Class ;
-                  rdfs:subClassOf sgam:Zone ;
-                  rdfs:comment "SGAM Station Zone."@en ;
-                  rdfs:label "StationZone"@en ;
-                  <http://www.w3.org/2004/02/skos/core#definition> "SGAM Station Zone."@en .
+                 rdfs:subClassOf sgam:Zone ;
+                 rdfs:comment "SGAM Station Zone."@en ;
+                 rdfs:label "StationZone"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "SGAM Station Zone."@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/sgam#Zone
@@ -346,6 +847,15 @@ sgam:Zone rdf:type owl:Class ;
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#TransStationA
 mimir:TransStationA rdf:type owl:NamedIndividual ,
                              mimir:Substation .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+mimir:id rdfs:comment "Unique identifier for the element."@en ;
+         rdfs:label "id"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Unique identifier for the element."@en .
 
 
 #################################################################
