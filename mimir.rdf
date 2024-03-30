@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/"
+     xml:base="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:mimir="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#id -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#id"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#belongs_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#belongs_to"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#id -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#id"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#AccessPoint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#AccessPoint">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#FieldZone"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#IED"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Bay -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Bay">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ProcessZone"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#VoltageLevel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Communication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Communication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#SCL"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ConductingEquipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ConductingEquipment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Bay"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ProcessZone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#DataTypeTemplates -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#DataTypeTemplates">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#SCL"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#EnterpriseZone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#EnterpriseZone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Zone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#FieldZone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#FieldZone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Zone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Header -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Header">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#SCL"/>
+        <mimir:id></mimir:id>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#IED -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#IED">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#SCL"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#LDevice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#LDevice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#FieldZone"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Server"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#LN -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#LN">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#FieldZone"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#LDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#LNO -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#LNO">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#FieldZone"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#LDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#OperationZone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#OperationZone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Zone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ProcessZone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ProcessZone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Zone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#SCL -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#SCL">
+        <mimir:id></mimir:id>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Server -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Server">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#AccessPoint"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#FieldZone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#StationZone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#StationZone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Zone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Substation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Substation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#SCL"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#VoltageLevel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#VoltageLevel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ProcessZone"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Substation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Zone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Zone"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#EnterpriseZone"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#FieldZone"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#OperationZone"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ProcessZone"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#StationZone"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

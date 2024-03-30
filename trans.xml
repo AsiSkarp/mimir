@@ -1,0 +1,38 @@
+<SCL>
+    <Header id="TransSub" version="1" revision="0" />
+    <Substation name="TransStationA">
+        <!-- Process Zone: Physical devices -->
+        <VoltageLevel name="VL1" nominalVoltage="400kV">
+            <Bay name="Bay1">
+                <ConductingEquipment name="CB101" type="CBR"/>
+                <ConductingEquipment name="DS101" type="DIS"/>
+            </Bay>
+            <!-- More bays and equipment as necessary -->
+        </VoltageLevel>
+        <!-- More voltage levels as necessary -->
+    </Substation>
+    <IED name="IED1" type="Protection">
+        <!-- Field Zone: Device configurations -->
+        <AccessPoint name="P1">
+            <Server>
+                <LDevice inst="LD0">
+                    <!-- Logical devices and nodes -->
+                    <LN0 lnClass="LLN0" inst="">
+                        <!-- Status and control data -->
+                    </LN0>
+                    <LN prefix="PT" lnClass="PTOC" inst="1">
+                        <!-- Protection settings and measurements -->
+                    </LN>
+                </LDevice>
+            </Server>
+        </AccessPoint>
+    </IED>
+    <!-- Station Zone: Integration and overall substation control logic -->
+    <!-- Communication setup for IEDs and other devices -->
+    <Communication>
+        <!-- Configuration for communication links -->
+    </Communication>
+    <DataTypeTemplates>
+        <!-- Definitions of data types and logical nodes -->
+    </DataTypeTemplates>
+</SCL>

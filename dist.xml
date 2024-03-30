@@ -1,0 +1,37 @@
+<SCL>
+    <Header id="DistSub" version="1" revision="0" />
+    <Substation name="DistStationB">
+        <!-- Process Zone: Physical devices and equipment -->
+        <VoltageLevel name="MV" nominalVoltage="33kV">
+            <Bay name="Bay1">
+                <ConductingEquipment name="CB201" type="CBR"/>
+                <ConductingEquipment name="DS201" type="DIS"/>
+            </Bay>
+            <!-- Additional bays/equipment as needed -->
+        </VoltageLevel>
+        <!-- Additional voltage levels as needed -->
+    </Substation>
+    <IED name="IED2" type="Controller">
+        <!-- Field Zone: Device configurations, especially for DER integration -->
+        <AccessPoint name="P2">
+            <Server>
+                <LDevice inst="LD1">
+                    <!-- Logical devices and nodes for DER management -->
+                    <LN0 lnClass="LLN0" inst="">
+                        <!-- Status and control data -->
+                    </LN0>
+                    <LN prefix="MD" lnClass="MDIF" inst="1">
+                        <!-- Measurement and interface settings -->
+                    </LN>
+                </LDevice>
+            </Server>
+        </AccessPoint>
+    </IED>
+    <!-- Station Zone: Integration and control for distribution logic -->
+    <Communication>
+        <!-- Configuration for communication links -->
+    </Communication>
+    <DataTypeTemplates>
+        <!-- Data types and logical node definitions -->
+    </DataTypeTemplates>
+</SCL>
