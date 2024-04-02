@@ -23,20 +23,12 @@ mimir:id rdf:type owl:AnnotationProperty ;
 <http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
 
 
-###  http://www/w3.org/2004/02/skos/core#definition
-<http://www/w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
-
-
 #################################################################
 #    Object Properties
 #################################################################
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#belongs_to
 mimir:belongs_to rdf:type owl:ObjectProperty .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#has
-mimir:has rdf:type owl:ObjectProperty .
 
 
 #################################################################
@@ -70,15 +62,6 @@ mimir:bayName rdf:type owl:DatatypeProperty ;
               <http://www.w3.org/2004/02/skos/core#definition> "bayName"@en .
 
 
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#bufTime
-mimir:bufTime rdf:type owl:DatatypeProperty ;
-              rdfs:domain mimir:ReportControl ;
-              rdfs:range xsd:string ;
-              rdfs:comment "Buffer time."@en ;
-              rdfs:label "bufTime"@en ;
-              <http://www.w3.org/2004/02/skos/core#definition> "bufTime"@en .
-
-
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#buffered
 mimir:buffered rdf:type owl:DatatypeProperty ;
                rdfs:domain mimir:ReportControl ;
@@ -86,6 +69,14 @@ mimir:buffered rdf:type owl:DatatypeProperty ;
                rdfs:comment "Buffered report."@en ;
                rdfs:label "buffered"@en ;
                <http://www.w3.org/2004/02/skos/core#definition> "buffered"@en .
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#bufTime
+mimir:bufTime rdf:type owl:DatatypeProperty ;
+              rdfs:domain mimir:ReportControl ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Buffer time."@en ;
+              rdfs:label "bufTime"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "bufTime"@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#cNodeName
@@ -262,15 +253,6 @@ mimir:multiplier rdf:type owl:DatatypeProperty ;
                  rdfs:comment "Multiplication factor"@en ;
                  rdfs:label "multiplier"@en ;
                  <http://www.w3.org/2004/02/skos/core#definition> "multiplier"@en .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#name
-mimir:name rdf:type owl:DatatypeProperty ;
-           rdfs:domain mimir:SCL ;
-           rdfs:range xsd:string ;
-           rdfs:comment "Name of the element."@en ;
-           rdfs:label "name"@en ;
-           <http://www.w3.org/2004/02/skos/core#definition> "name"@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#nameStructure
@@ -811,6 +793,7 @@ mimir:VoltageLevel rdf:type owl:Class ;
                    <http://www.w3.org/2004/02/skos/core#definition> "VoltageLevel"@en .
 
 
+
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/sgam#EnterpriseZone
 sgam:EnterpriseZone rdf:type owl:Class ;
                     rdfs:subClassOf sgam:Zone ;
@@ -862,126 +845,9 @@ sgam:Zone rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ConductingEquipment1
-mimir:ConductingEquipment1 rdf:type owl:NamedIndividual .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ConductingEquipment2
-mimir:ConductingEquipment2 rdf:type owl:NamedIndividual .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/AccessPoint1
-:AccessPoint1 rdf:type owl:NamedIndividual ,
-                       mimir:AccessPoint ;
-              mimir:has :Server1 ;
-              mimir:name "P1"@en ;
-              rdfs:label "AccessPoint1"@en .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/Bay1
-:Bay1 rdf:type owl:NamedIndividual ,
-               mimir:Bay ;
-      mimir:has mimir:ConductingEquipment1 ,
-                mimir:ConductingEquipment2 ;
-      mimir:name "Bay 1"@en ;
-      rdfs:label "Bay1"@en .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/ConductingEquipment1
-:ConductingEquipment1 rdf:type owl:NamedIndividual ,
-                               mimir:ConductingEquipment ;
-                      mimir:name "CB101"@en ;
-                      mimir:type "CBR" ;
-                      rdfs:label "ConductingEquipment1"@en .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/ConductingEquipment2
-:ConductingEquipment2 rdf:type owl:NamedIndividual ,
-                               mimir:ConductingEquipment ;
-                      mimir:name "DS101"@en ;
-                      mimir:type "DIS" ;
-                      rdfs:label "ConductingEquipment2"@en .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/Header1
-:Header1 rdf:type owl:NamedIndividual ,
-                  mimir:Header ;
-         mimir:release "1.0"@en ;
-         mimir:version "1.0"@en ;
-         mimir:what "Substation Configuration Description"@en ;
-         mimir:when "2024-04-02"@en ;
-         mimir:who "Asbjoern Skarphedinsson"@en ;
-         mimir:id "TransSub"@en ;
-         rdfs:label "Header1"@en .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/IED1
-:IED1 rdf:type owl:NamedIndividual ,
-               mimir:IED ;
-      mimir:has :AccessPoint1 ;
-      mimir:name "IED1"@en ;
-      mimir:prefix "IED"@en ;
-      mimir:type "Protection"@en ;
-      rdfs:label "IED1"@en .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/LDevice1
-:LDevice1 rdf:type owl:NamedIndividual ,
-                   mimir:LDevice ;
-          mimir:has :LN0a ,
-                    :LN1 ;
-          mimir:inst "LD0"@en ;
-          rdfs:label "LDevice1"@en .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/LN0a
-:LN0a rdf:type owl:NamedIndividual ,
-               mimir:LN0 ;
-      mimir:inst "LN0"@en ;
-      mimir:lnClass "LLN0"@en ;
-      rdfs:label "LN0"@en .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/LN1
-:LN1 rdf:type owl:NamedIndividual ,
-              mimir:LN ;
-     mimir:inst "1"@en ;
-     mimir:lnClass "PTOC" ;
-     mimir:prefix "PT"@en ;
-     rdfs:label "LN1"@en .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/Server1
-:Server1 rdf:type owl:NamedIndividual ,
-                  mimir:Server ;
-         mimir:has :LDevice1 ;
-         rdfs:label "Server1"@en .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/Substation1
-:Substation1 rdf:type owl:NamedIndividual ,
-                      mimir:Substation ;
-             mimir:has :VoltageLevel1 ;
-             mimir:name "Substation A"@en ;
-             rdfs:label "Substation1"@en .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/TransStationA
-:TransStationA rdf:type owl:NamedIndividual ,
-                        mimir:SCL ;
-               mimir:has :Header1 ,
-                         :IED1 ,
-                         :Substation1 ;
-               rdfs:label "TransStationA"@en .
-
-
-###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/VoltageLevel1
-:VoltageLevel1 rdf:type owl:NamedIndividual ,
-                        mimir:VoltageLevel ;
-               mimir:has :Bay1 ;
-               mimir:name "Voltage Level 1"@en ;
-               mimir:nominalVoltage "400kV"@en ;
-               rdfs:label "VoltageLevel1"@en .
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#TransStationA
+mimir:TransStationA rdf:type owl:NamedIndividual ,
+                             mimir:Substation .
 
 
 #################################################################
