@@ -7,7 +7,14 @@
 			<Hitem revision="1" version="V1" what="created" when="2024-03-22" who="CET850Config"/>
 		</History>
 	</Header>
-	<Substation name="SchneiderDistStation" desc=""/>
+	<Substation name="SchneiderDistStation" desc="">
+		<VoltageLevel name="ne-VL" desc="Voltage Level">
+			<Bay name="ne20p" desc="Bay">
+				<LNode iedName="DistSubStation" ldInst="LD0" prefix="POSH" lnClass="MMXU" lnInst="2" />
+				<ConnectivityNode name="cNode" sxy:x="780" sxy:y="780"/>
+			</Bay>
+		</VoltageLevel>
+	</Substation>
 	<Communication>
 		<SubNetwork name="MockNetworkBus" desc="" type="8-MMS">
 			<BitRate unit="b/s" multiplier="M">100</BitRate>
