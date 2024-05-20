@@ -1,0 +1,73 @@
+@prefix : <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix mimir: <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#> .
+@base <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#> .
+
+<http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir> rdf:type owl:Ontology .
+
+:mimir_catalog rdf:type owl:NamedIndividual,
+                        dcat:Catalog ;
+               dct:title "Mimir Data Catalog" ;
+               rdfs:label "Mimir Data Catalog" ;
+               foaf:homepage <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir> ;
+               dct:publisher :mimir_publisher ;
+               dct:language <http://id.loc.gov/vocabulary/iso639-1/en> ;
+               dcat:dataset :mock_dataset .
+
+
+:mimir_publisher rdf:type owl:NamedIndividual,  
+                          foaf:Organization ;
+                 rdfs:label "Mimir Catalog Publisher" .
+
+
+:mock_dataset rdf:type owl:NamedIndividual,
+                       dcat:Dataset ;
+              dct:title "Initial Dataset" ;
+              dcat:keyword "mock" ;
+              mimir:createdBy :asbjoern ;
+              mimir:ownedBy :alice ;
+              mimir:usedBy :bob ;
+              dct:issued "2024-04-20"^^xsd:date ;
+              dct:modified "2024-04-20"^^xsd:date ;
+              dcat:distribution :mock_distribution .
+
+
+:mock_distribution rdf:type owl:NamedIndividual,
+                            dcat:Distribution ;
+                   dct:title "Mock Distribution" ;
+                   dcat:accessService :mock_service ;
+                   dct:format "text/csv" ;
+                   dcat:accessUrl <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/mock.csv> ;
+                   dcat:mediaType "text/csv" .
+
+
+:mock_service rdf:type owl:NamedIndividual,
+                       dcat:DataService ;
+              dcat:endPointUrl <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/mock_service> ;
+              dcat:endPointdescription "TCTR" .
+
+
+:asbjoern rdf:type owl:NamedIndividual,
+                   foaf:Person ;
+          foaf:name "Asbjørn" ;
+          foaf:mbox "mailto:asbjoern@mimir.com" .
+
+
+:alice rdf:type owl:NamedIndividual, 
+                foaf:Person ;
+       foaf:name "Alice" ;
+       foaf:mbox "mailto:alice@mimir.com" .
+
+
+:bob rdf:type owl:NamedIndividual,
+              foaf:Person ;
+     foaf:name "Bob" ;
+     foaf:mbox "mailto:bob@mimir.com" .          

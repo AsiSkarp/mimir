@@ -1,4 +1,4 @@
-@prefix : <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/> .
+@prefix : <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -6,7 +6,10 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sgam: <http://www.semanticweb.org/asbjorn/ontologies/2024/2/sgam#> .
 @prefix mimir: <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#> .
-@base <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@base <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#> .
 
 <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir> rdf:type owl:Ontology .
 
@@ -31,8 +34,76 @@ mimir:id rdf:type owl:AnnotationProperty ;
 #    Object Properties
 #################################################################
 
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#has_product_datasource
+# mimir:has_datasource rdf:type owl:ObjectProperty ;
+#                     rdfs:domain mimir:DataProduct ;
+#                     rdfs:range mimir:ProductDataSource ;
+#                     rdfs:comment "Data source of the data product."@en ;
+#                     rdfs:label "has_product_datasource"@en ;
+#                     <http://www.w3.org/2004/02/skos/core#definition> "has_product_datasource"@en .
+
+
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#used_in
+mimir:used_in rdf:type owl:ObjectProperty .
+
+
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#personAssociation
+mimir:personAssociation rdf:type owl:ObjectProperty ;
+                         rdfs:domain foaf:Person ;                    
+                         rdfs:comment "Person association."@en ;
+                         rdfs:label "personAssociation"@en ;
+                         <http://www.w3.org/2004/02/skos/core#definition> "personAssociation"@en .
+
+
+
+
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#createdBy
+mimir:createdBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf mimir:personAssociation ;
+              rdfs:domain dcat:Dataset ;
+              rdfs:range  foaf:Person ;
+              rdfs:comment "Person who created the data product."@en ;
+              rdfs:label "createdBy"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "createdBy"@en .
+
+
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#updatedBy
+mimir:updatedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf mimir:personAssociation ;
+              rdfs:domain dcat:Dataset ;
+              rdfs:range foaf:Person ;
+              rdfs:comment "Person who last updated the data product."@en ;
+              rdfs:label "updatedBy"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "updatedBy"@en .
+
+
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ownedBy
+mimir:ownedBy rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf mimir:personAssociation ;
+           rdfs:domain dcat:Dataset ;
+           rdfs:range foaf:Person ;
+           rdfs:comment "Person who owns the data product."@en ;
+           rdfs:label "ownedBy"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "ownedBy"@en .
+
+
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#usedBy
+mimir:usedBy rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf mimir:personAssociation ;
+           rdfs:domain dcat:Dataset ;
+           rdfs:range foaf:Person ;
+           rdfs:comment "Person who uses the data product."@en ;
+           rdfs:label "usedBy"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "usedBy"@en .
+
+
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#belongs_to
-mimir:belongs_to rdf:type owl:ObjectProperty .
+mimir:belongs_to rdf:type owl:ObjectProperty ;
+                 rdfs:domain owl:NamedIndividual ;
+                 rdfs:range sgam:Domain ;
+                 rdfs:comment "Belongs to the domain."@en ;
+                 rdfs:label "belongs_to"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "belongs_to"@en .
 
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#has
@@ -42,6 +113,70 @@ mimir:has rdf:type owl:ObjectProperty .
 #################################################################
 #    Data properties
 #################################################################
+
+
+###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#name
+#mimir:personName rdf:type owl:DatatypeProperty ;
+#                 rdfs:domain mimir:Person ;
+#                 rdfs:range xsd:string ;
+#                 rdfs:comment "Name of the person."@en ;
+#                 rdfs:label "personName"@en ;
+#                 <http://www.w3.org/2004/02/skos/core#definition> "personName"@en .
+
+
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#emailAddress
+#mimir:emailAddress rdf:type owl:DatatypeProperty ;
+#                   rdfs:domain mimir:Person ;
+#                   rdfs:range xsd:string ;
+#                   rdfs:comment "Email address of the person."@en ;
+#                   rdfs:label "emailAddress"@en ;
+#                   <http://www.w3.org/2004/02/skos/core#definition> "emailAddress"@en .
+
+
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#department
+#mimir:department rdf:type owl:DatatypeProperty ;
+#                 rdfs:domain mimir:Person ;
+#                 rdfs:range xsd:string ;
+#                 rdfs:comment "Department of the person."@en ;
+#                 rdfs:label "department"@en ;
+#                 <http://www.w3.org/2004/02/skos/core#definition> "department"@en .
+
+
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#documentation 
+#mimir:documentation rdf:type owl:DatatypeProperty ;
+#                    rdfs:domain mimir:DataProduct ;
+#                    rdfs:range xsd:anyURI ;
+#                    rdfs:comment "Documentation of the data product."@en ;
+#                    rdfs:label "documentation"@en ;
+#                    <http://www.w3.org/2004/02/skos/core#definition> "documentation"@en .
+
+
+# ### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#created_at 
+# mimir:created_at rdf:type owl:DatatypeProperty ;
+#                 rdfs:domain mimir:DataProduct ;
+#                 rdfs:range xsd:dateTime ;
+#                 rdfs:comment "Date and time of the creation of the data product."@en ;
+#                 rdfs:label "created_at"@en ;
+#                 <http://www.w3.org/2004/02/skos/core#definition> "created_at"@en .
+
+
+# ### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#updated_at
+# mimir:updated_at rdf:type owl:DatatypeProperty ;
+#                 rdfs:domain mimir:DataProduct ;
+#                 rdfs:range xsd:dateTime ;
+#                 rdfs:comment "Date and time of the last update of the data product."@en ;
+#                 rdfs:label "updated_at"@en ;
+#                 <http://www.w3.org/2004/02/skos/core#definition> "updated_at"@en .
+
+
+# ### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#tag
+# mimir:tag rdf:type owl:DatatypeProperty ;
+#          rdfs:domain mimir:DataProduct ;
+#          rdfs:range xsd:string ;
+#          rdfs:comment "Tag of the data product."@en ;
+#          rdfs:label "tag"@en ;
+#          <http://www.w3.org/2004/02/skos/core#definition> "tag"@en .
+
 
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#apName
 mimir:apName rdf:type owl:DatatypeProperty ;
@@ -475,13 +610,15 @@ mimir:who rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
+
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#AccessPoint
 mimir:AccessPoint rdf:type owl:Class ;
                   rdfs:subClassOf mimir:IED ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty mimir:belongs_to ;
-                                    owl:allValuesFrom sgam:FieldZone
-                                  ] ;
+                                  sgam:FieldZone ;
+                                  #[ rdf:type owl:Restriction ;
+                                  #  owl:onProperty mimir:belongs_to ;
+                                  #  owl:allValuesFrom sgam:FieldZone
+                                  #] ;
                   rdfs:comment "Access point of the IED."@en ;
                   rdfs:label "AccessPoint"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "AccessPoint"@en .
@@ -615,6 +752,21 @@ mimir:DataTypeTemplates rdf:type owl:Class ;
                         <http://www.w3.org/2004/02/skos/core#definition> "DataTypeTemplates"@en .
 
 
+# ### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#DataProduct
+# mimir:DataProduct rdf:type owl:Class ;
+#                   rdfs:comment "A class for defining curated Data Products."@en ;
+#                   rdfs:label "DataProduct"@en ;
+#                   <http://www.w3.org/2004/02/skos/core#definition> "DataProduct"@en .
+
+
+# ### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#ProductDatasource
+# mimir:ProductDataSource rdf:type owl:Class ;
+#                         rdfs:subClassOf mimir:DataProduct ;
+#                         rdfs:comment "A class that defines the data source of a Data Product."@en ;
+#                         rdfs:label "ProductDataSource"@en ;
+#                         <http://www.w3.org/2004/02/skos/core#definition> "ProductDataSource"@en .
+
+
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#EnumType
 mimir:EnumType rdf:type owl:Class ;
                rdfs:subClassOf mimir:DataTypeTemplates ;
@@ -720,6 +872,13 @@ mimir:P rdf:type owl:Class ;
         <http://www.w3.org/2004/02/skos/core#definition> "P"@en .
 
 
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Person
+#mimir:Person rdf:type owl:Class ;
+#            rdfs:comment "A class that defines Persons."@en ;
+#            rdfs:label "Person"@en ;
+#            <http://www.w3.org/2004/02/skos/core#definition> "Person"@en .
+
+
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#Private
 mimir:Private rdf:type owl:Class ;
               rdfs:subClassOf mimir:SCL ;
@@ -811,10 +970,11 @@ mimir:Voltage rdf:type owl:Class ;
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#VoltageLevel
 mimir:VoltageLevel rdf:type owl:Class ;
                    rdfs:subClassOf mimir:Substation ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty mimir:belongs_to ;
-                                     owl:allValuesFrom sgam:ProcessZone
-                                   ] ;
+                                   sgam:ProcessZone ;
+                                   #[ rdf:type owl:Restriction ;
+                                   #  owl:onProperty mimir:belongs_to ;
+                                   #  owl:allValuesFrom sgam:ProcessZone
+                                   #] ;
                    rdfs:comment "Voltage level of the substation."@en ;
                    rdfs:label "VoltageLevel"@en ;
                    <http://www.w3.org/2004/02/skos/core#definition> "VoltageLevel"@en .
@@ -860,6 +1020,53 @@ sgam:StationZone rdf:type owl:Class ;
                  <http://www.w3.org/2004/02/skos/core#definition> "StationZone"@en .
 
 
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/sgam#Domain
+sgam:Domain rdf:type owl:Class ;
+            rdfs:comment "SGAM Domain Specification."@en ;
+            rdfs:label "Domain"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Domain"@en .
+
+
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/sgam#GenerationDomain
+sgam:GenerationDomain rdf:type owl:Class ;
+                      rdfs:subClassOf sgam:Domain ;
+                      rdfs:comment "SGAM Generation Domain."@en ;
+                      rdfs:label "GenerationDomain"@en ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "GenerationDomain"@en .
+
+
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/sgam#TransmissionDomain
+sgam:TransmissionDomain rdf:type owl:Class ;
+                        rdfs:subClassOf sgam:Domain ;
+                        rdfs:comment "SGAM Transmission Domain."@en ;
+                        rdfs:label "TransmissionDomain"@en ;
+                        <http://www.w3.org/2004/02/skos/core#definition> "TransmissionDomain"@en .
+
+
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/sgam#DistributionDomain
+sgam:DistributionDomain rdf:type owl:Class ;
+                        rdfs:subClassOf sgam:Domain ;
+                        rdfs:comment "SGAM Distribution Domain."@en ;
+                        rdfs:label "DistributionDomain"@en ;
+                        <http://www.w3.org/2004/02/skos/core#definition> "DistributionDomain"@en .
+
+
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/sgam#DERDomain
+sgam:DERDomain rdf:type owl:Class ;
+              rdfs:subClassOf sgam:Domain ;
+              rdfs:comment "SGAM DER Domain."@en ;
+              rdfs:label "DERDomain"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "DERDomain"@en .
+
+
+### http://www.semanticweb.org/asbjorn/ontologies/2024/2/sgam#CustomerPremisesDomain
+sgam:CustomerPremisesDomain rdf:type owl:Class ;
+                            rdfs:subClassOf sgam:Domain ;
+                            rdfs:comment "SGAM Customer Premises Domain."@en ;
+                            rdfs:label "CustomerPremisesDomain"@en ;
+                            <http://www.w3.org/2004/02/skos/core#definition> "CustomerPremisesDomain"@en .
+
+
 ###  http://www.semanticweb.org/asbjorn/ontologies/2024/2/sgam#Zone
 sgam:Zone rdf:type owl:Class ;
           rdfs:comment "SGAM Zone Specification."@en ;
@@ -893,6 +1100,16 @@ mimir:id rdfs:comment "Unique identifier for the element."@en ;
                 sgam:OperationZone
                 sgam:ProcessZone
                 sgam:StationZone
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( sgam:GenerationDomain
+                sgam:TransmissionDomain
+                sgam:DistributionDomain
+                sgam:DERDomain
+                sgam:CustomerPremisesDomain
               )
 ] .
 
