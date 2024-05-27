@@ -46,11 +46,10 @@
                             dcat:Distribution ;
                    dct:title "Mock Distribution" ;
                    dcat:accessService :mock_service ;
-                   #dct:format "text/csv" ;
                    dct:format <https://www.iana.org/assignments/media-types/text/csv> ;
                    dcat:accessURL <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/mock.csv> ;
                    dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> .
-                   #dcat:mediaType "text/csv" .
+                   
 
 
 :mock_service rdf:type owl:NamedIndividual,

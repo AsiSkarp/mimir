@@ -8,11 +8,13 @@
 @prefix mimir: <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#> .
 @base <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir#> .
 
-<http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir> rdf:type owl:Ontology .
+#<http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir> rdf:type owl:Ontology .
 
 
 :SCL1 rdf:type owl:NamedIndividual ,
               mimir:SCL ;
+      #rdfs:subClassOf sgam:TransmissionDomain ;
+      mimir:belongsTo sgam:TransmissionDomain ;
       mimir:has :HeaderA ,
                 :SubstationA ,
                 :IEDA_1 ,
@@ -227,6 +229,7 @@
           mimir:lnInst "1" ;
           mimir:lnClass "MMXU" ;
           mimir:doName "topic:'MMXU_1'" ;
+          mimir:hasDataSet "file:///measurement1.csv" ;
           rdfs:comment "localhost:9092"@en ;
           mimir:name "FCDAA_2" ;
           rdfs:label "FCDAA_2" .

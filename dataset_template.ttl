@@ -1,0 +1,19 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<http://example.org/dataset/your-dataset>
+    a dcat:Dataset ;
+    dct:title "Your Dataset Title" ;
+    dct:description "A description of your dataset." ;
+    dcat:keyword "example" , "dataset" ;
+    dcat:distribution <http://example.org/dataset/your-dataset-distribution> ;
+    dct:publisher <http://example.org/organization/your-org> ;
+    dct:creator <http://example.org/person/your-name> ;
+    dct:issued "2024-05-24"^^xsd:date ;
+    dct:modified "2024-05-24"^^xsd:date .
+
+<http://example.org/dataset/your-dataset-distribution>
+    a dcat:Distribution ;
+    dcat:accessURL <http://example.org/dataset/your-dataset.csv> ;
+    dct:format "text/csv" .

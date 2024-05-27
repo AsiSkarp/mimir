@@ -1,0 +1,56 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://example.org/catalog> a dcat:Catalog ;
+    dct:title "Kafka Topics Data Catalog" ;
+    dct:description "A catalog of Kafka topics containing voltage and current measurements." ;
+    dct:publisher <http://example.org/publisher> ;
+    dct:issued "2024-05-22"^^xsd:date ;
+    dct:modified "2024-05-22"^^xsd:date ;
+    dcat:dataset <http://example.org/dataset/voltage> , <http://example.org/dataset/current> , <http://example.org/dataset/aggregated> .
+
+<http://example.org/dataset/voltage> a dcat:Dataset ;
+    dct:title "Voltage Measurements" ;
+    dct:description "A dataset containing simulated voltage measurements." ;
+    dct:identifier "voltage" ;
+    dcat:keyword "voltage", "measurements", "simulated data" ;
+    dcat:distribution <http://example.org/distribution/voltage> .
+
+<http://example.org/dataset/current> a dcat:Dataset ;
+    dct:title "Current Measurements" ;
+    dct:description "A dataset containing simulated current measurements." ;
+    dct:identifier "current" ;
+    dcat:keyword "current", "measurements", "simulated data" ;
+    dcat:distribution <http://example.org/distribution/current> .
+
+<http://example.org/dataset/aggregated> a dcat:Dataset ;
+    dct:title "Aggregated Measurements" ;
+    dct:description "A dataset containing aggregated voltage and current measurements." ;
+    dct:identifier "aggregated" ;
+    dcat:keyword "aggregated", "measurements", "voltage", "current" ;
+    dcat:distribution <http://example.org/distribution/aggregated> .
+
+<http://example.org/distribution/voltage> a dcat:Distribution ;
+    dct:title "Voltage Measurements Distribution" ;
+    dct:description "Distribution of the voltage measurements dataset." ;
+    dct:format <https://www.iana.org/assignments/media-types/application/json> ;
+    dcat:accessURL <kafka://localhost:9092/voltage> .
+
+<http://example.org/distribution/current> a dcat:Distribution ;
+    dct:title "Current Measurements Distribution" ;
+    dct:description "Distribution of the current measurements dataset." ;
+    dct:format <https://www.iana.org/assignments/media-types/application/json> ;
+    dcat:accessURL <kafka://localhost:9092/current> .
+
+<http://example.org/distribution/aggregated> a dcat:Distribution ;
+    dct:title "Aggregated Measurements Distribution" ;
+    dct:description "Distribution of the aggregated measurements dataset." ;
+    dct:format <https://www.iana.org/assignments/media-types/application/json> ;
+    dcat:accessURL <kafka://localhost:9092/aggregated> .
+
+<http://example.org/publisher> a foaf:Organization ;
+    foaf:name "Example Publisher" ;
+    foaf:homepage <http://example.org> .

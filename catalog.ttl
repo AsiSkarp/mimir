@@ -15,6 +15,7 @@
 
 :mimir_catalog rdf:type owl:NamedIndividual,
                         dcat:Catalog ;
+               dct:description "The Mock Data Catalog" ;
                dct:title "Mimir Data Catalog" ;
                rdfs:label "Mimir Data Catalog" ;
                foaf:homepage <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir> ;
@@ -30,6 +31,7 @@
 
 :mock_dataset rdf:type owl:NamedIndividual,
                        dcat:Dataset ;
+              dct:description "A mock dataset for demonstration purposes" ;
               dct:title "Initial Dataset" ;
               dcat:keyword "mock" ;
               mimir:createdBy :asbjoern ;
@@ -44,15 +46,17 @@
                             dcat:Distribution ;
                    dct:title "Mock Distribution" ;
                    dcat:accessService :mock_service ;
-                   dct:format "text/csv" ;
-                   dcat:accessUrl <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/mock.csv> ;
-                   dcat:mediaType "text/csv" .
+                   dct:format <https://www.iana.org/assignments/media-types/text/csv> ;
+                   dcat:accessURL <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/mock.csv> ;
+                   dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> .
+                   
 
 
 :mock_service rdf:type owl:NamedIndividual,
                        dcat:DataService ;
-              dcat:endPointUrl <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/mock_service> ;
-              dcat:endPointdescription "TCTR" .
+              dct:title "Mock Service" ;
+              dcat:endpointURL <http://www.semanticweb.org/asbjorn/ontologies/2024/2/mimir/mock_service> ;
+              dcat:endpointdescription "TCTR" .
 
 
 :asbjoern rdf:type owl:NamedIndividual,
